@@ -1,0 +1,31 @@
+{
+  "name": "suds_prototype",
+  "version": "1.0.0",
+  "description": "testbed for SUDS UI dev workflow",
+  "main": "entry.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "css-loader": "^0.25.0",
+    "node-sass": "^3.9.3",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guyjin/suds_prototype.git"
+  },
+  "author": "Ben Vaughan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guyjin/suds_prototype/issues"
+  },
+  "homepage": "https://github.com/guyjin/suds_prototype#readme"
+}

@@ -13,6 +13,7 @@ module.exports = {
         loaders: [
 
             // sass files
+            { test: /\.css$/, loaders: ['style', 'css'] },
             {
                 test: /\.scss$/,
                 loaders: ["style", "css", "sass"]
@@ -24,6 +25,16 @@ module.exports = {
                 query: {
                     presets: ['es2015']
                 }
+            },
+            {
+                test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                loader: 'file'
+            },
+
+            // Bootstrap 3
+            {
+                test: /bootstrap-sass\/assets\/javascripts\//,
+                loader: 'imports?jQuery=jquery'
             }
         ]
     }

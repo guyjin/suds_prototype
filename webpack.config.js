@@ -33,9 +33,10 @@ module.exports = {
 
             // Bootstrap 3
             {
-                test: /bootstrap-sass\/assets\/javascripts\//,
+                test:/bootstrap-sass[\/\\]assets[\/\\]javascripts[\/\\]/,
                 loader: 'imports?jQuery=jquery'
             }
+
         ]
     }
 };

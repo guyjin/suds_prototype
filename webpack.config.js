@@ -1,11 +1,12 @@
 /**
  * Created by Ben.Vaughan on 9/9/2016.
  */
+var path = require('path');
 
 module.exports = {
-    entry: ['webpack/hot/dev-server', "./entry.js"],
+    entry: ['webpack/hot/dev-server', "./src/js/entry.js"],
     output: {
-        path: __dirname,
+        path: path.resolve(__dirname, 'build'),
         filename: "bundle.js"
     },
     module: {

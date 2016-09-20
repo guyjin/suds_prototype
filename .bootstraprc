@@ -1,0 +1,24 @@
+# You can use comments here
+bootstrapVersion: 3
+
+logLevel: debug
+
+appStyles: ./src/sass/style.scss
+
+useFlexbox: true
+
+extractStyles: true
+
+styleLoaders:
+  - style
+  - css?sourceMap
+  - resolve-url?sourceMap
+  - sass?sourceMap
+
+styles:
+  normalize: true
+  print: true
+
+scripts:
+  alert: true
+  button: true

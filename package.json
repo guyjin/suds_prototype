@@ -1,0 +1,42 @@
+{
+  "name": "suds_prototype",
+  "version": "1.0.0",
+  "description": "sample app trying to establish a toolchain and build process for the SUDS project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guyjin/suds_prototype.git"
+  },
+  "author": "Ben Vaughan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guyjin/suds_prototype/issues"
+  },
+  "homepage": "https://github.com/guyjin/suds_prototype#readme",
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "browser-sync": "^2.16.0",
+    "graceful-fs": "^4.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev": "^7.1.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "lodash": "^4.0.0",
+    "minimatch": "^3.0.2",
+    "plumber": "^0.4.8"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "dojo": "^1.11.2",
+    "font-awesome": "^4.6.3",
+    "handlebars": "^4.0.5",
+    "jquery": "^3.1.0"
+  }
+}

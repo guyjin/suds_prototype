@@ -3,7 +3,11 @@
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
     sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    postcss = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer'),
+    clean = require('gulp-clean'),
+    fs = require('fs');
 
 /*
 
@@ -60,13 +64,12 @@ gulp.task('build', ['copy']);
 
 /*
 
-    SASS Handling
+    CSS Handling
 
  */
 
-gulp.task('sass', ['fonts'], function() {
+gulp.task('sass', function() {
     return gulp.src('./src/assets/sass/*.scss')
-        .pipe(sourcemaps.init())
         .pipe(sass.sync({
                 outputStyle: 'compressed',
                 includePaths: [
@@ -74,13 +77,41 @@ gulp.task('sass', ['fonts'], function() {
                     './node_modules/font-awesome/scss'
                 ]
             }).on('error', sass.logError))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./src/assets/css'));
+        .pipe(gulp.dest('./src/assets/sass'));
 });
+
+gulp.task('runsass',['postcss'], function() {
+    var cssFile = './src/assets/sass/styles.css';
+    if(fs.existsSync(cssFile)){
+        gutil.log(
+            'file found'
+        );
+        return gulp.src('./src/assets/sass/*.css', { read: false })
+            .pipe(clean());
+    } else {
+        gutil.log('no file found');
+    }
+});
+
 
 gulp.task('sass:watch', function(){
     gulp.watch('./src/assets/sass/**/*.scss', ['sass']);
 });
+
+
+gulp.task('postcss', ['sass'], function() {
+    return gulp.src('./src/assets/sass/*.css')
+        .pipe(sourcemaps.init())
+        .pipe(postcss([ autoprefixer({browsers: ['last 2 versions']}) ]))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./src/assets/css'))
+});
+
+/*
+
+  End CSS Handling
+
+ */
 
 
 /*************************************************/
@@ -96,6 +127,16 @@ gulp.task('fonts', function() {
     return gulp.src([
         './node_modules/font-awesome/fonts/fontawesome-webfont.*'])
         .pipe(gulp.dest('src/assets/fonts/'));
+});
+
+/*
+
+ End Font Handling
+
+ */
+
+gulp.task('default', ['runsass','fonts'], function() {
+
 });
 
 
